@@ -1,11 +1,134 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Portafolio de Juan - Ingeniero de Sistemas</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.2.7/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+        .animate-fadeIn {
+            animation: fadeIn 1s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
 </head>
-<body>
-    Hola mundo :)
+<body class="bg-gray-900 text-white">
+    <!-- Header -->
+    <header class="bg-gray-800 py-6">
+        <div class="container mx-auto flex items-center justify-between px-4">
+            <h1 class="text-3xl font-bold animate-fadeIn">Juan - Ingeniero de Sistemas</h1>
+            <nav>
+                <a href="#skills" class="text-lg hover:text-blue-400">Skills</a>
+                <a href="#projects" class="ml-6 text-lg hover:text-blue-400">Proyectos</a>
+                <a href="#contact" class="ml-6 text-lg hover:text-blue-400">Contacto</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero bg-gray-900 h-screen flex items-center justify-center text-center py-20">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl md:text-5xl font-bold mb-4 animate-fadeIn">¡Hola! Soy Juan</h2>
+            <p class="text-lg md:text-xl mb-8 animate-fadeIn">Ingeniero de Sistemas Senior con experiencia en desarrollo de software y un enfoque en soluciones innovadoras.</p>
+            <a href="#contact" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-lg transition duration-300 animate-fadeIn">Contáctame</a>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-gray-800">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-12 text-center animate-fadeIn">Habilidades</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-gray-700 p-6 rounded-lg shadow-lg animate-fadeIn">
+                    <h3 class="text-xl font-semibold mb-4">Desarrollo Web</h3>
+                    <p>Experto en HTML, CSS, JavaScript, y frameworks modernos como React y Angular.</p>
+                </div>
+                <div class="bg-gray-700 p-6 rounded-lg shadow-lg animate-fadeIn">
+                    <h3 class="text-xl font-semibold mb-4">Bases de Datos</h3>
+                    <p>Experiencia en diseño y gestión de bases de datos SQL y NoSQL, como MySQL, PostgreSQL y MongoDB.</p>
+                </div>
+                <div class="bg-gray-700 p-6 rounded-lg shadow-lg animate-fadeIn">
+                    <h3 class="text-xl font-semibold mb-4">DevOps</h3>
+                    <p>Conocimiento en integración continua, despliegue continuo y herramientas como Docker y Kubernetes.</p>
+                </div>
+                <div class="bg-gray-700 p-6 rounded-lg shadow-lg animate-fadeIn">
+                    <h3 class="text-xl font-semibold mb-4">Seguridad</h3>
+                    <p>Implementación de medidas de seguridad para proteger aplicaciones y datos sensibles.</p>
+                </div>
+                <div class="bg-gray-700 p-6 rounded-lg shadow-lg animate-fadeIn">
+                    <h3 class="text-xl font-semibold mb-4">Análisis y Diseño</h3>
+                    <p>Habilidades en análisis de requerimientos, diseño de sistemas y metodologías ágiles.</p>
+                </div>
+                <div class="bg-gray-700 p-6 rounded-lg shadow-lg animate-fadeIn">
+                    <h3 class="text-xl font-semibold mb-4">Gestión de Proyectos</h3>
+                    <p>Experiencia en la gestión de proyectos de software, planificación y coordinación de equipos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-gray-900">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-12 text-center animate-fadeIn">Proyectos Destacados</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project Card -->
+                <div class="bg-gray-800 p-6 rounded-lg shadow-lg animate-fadeIn">
+                    <h3 class="text-xl font-semibold mb-4">Proyecto 1</h3>
+                    <p>Descripción breve del proyecto, incluyendo las tecnologías utilizadas y el impacto logrado.</p>
+                </div>
+                <!-- Project Card -->
+                <div class="bg-gray-800 p-6 rounded-lg shadow-lg animate-fadeIn">
+                    <h3 class="text-xl font-semibold mb-4">Proyecto 2</h3>
+                    <p>Descripción breve del proyecto, incluyendo las tecnologías utilizadas y el impacto logrado.</p>
+                </div>
+                <!-- Project Card -->
+                <div class="bg-gray-800 p-6 rounded-lg shadow-lg animate-fadeIn">
+                    <h3 class="text-xl font-semibold mb-4">Proyecto 3</h3>
+                    <p>Descripción breve del proyecto, incluyendo las tecnologías utilizadas y el impacto logrado.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-800">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-12 text-center animate-fadeIn">Contacto</h2>
+            <div class="flex justify-center">
+                <form class="w-full max-w-lg bg-gray-700 p-8 rounded-lg shadow-lg">
+                    <div class="mb-4">
+                        <label for="name" class="block text-lg font-medium mb-2">Nombre</label>
+                        <input type="text" id="name" class="w-full p-3 bg-gray-600 text-white rounded-lg border border-gray-500 focus:outline-none focus:border-blue-500" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="email" class="block text-lg font-medium mb-2">Email</label>
+                        <input type="email" id="email" class="w-full p-3 bg-gray-600 text-white rounded-lg border border-gray-500 focus:outline-none focus:border-blue-500" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="message" class="block text-lg font-medium mb-2">Mensaje</label>
+                        <textarea id="message" rows="4" class="w-full p-3 bg-gray-600 text-white rounded-lg border border-gray-500 focus:outline-none focus:border-blue-500" required></textarea>
+                    </div>
+                    <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-lg transition duration-300">Enviar</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 py-6 text-center">
+        <p class="text-white">© 2024 Juan. Todos los derechos reservados.</p>
+    </footer>
 </body>
 </html>
