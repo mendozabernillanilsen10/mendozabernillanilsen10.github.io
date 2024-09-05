@@ -1,134 +1,124 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portafolio de Juan - Ingeniero de Sistemas</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.2.7/dist/tailwind.min.css" rel="stylesheet">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-        body {
-            font-family: 'Roboto', sans-serif;
-        }
-        .animate-fadeIn {
-            animation: fadeIn 1s ease-in-out;
-        }
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
+    <title>Smith de los Cielos - Portafolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        neon: {
+                            cyan: '#00FFFF',
+                            blue: '#00BFFF',
+                            purple: '#8A2BE2'
+                        }
+                    }
+                }
             }
-            to {
-                opacity: 1;
-            }
         }
-    </style>
+    </script>
 </head>
-<body class="bg-gray-900 text-white">
-    <!-- Header -->
-    <header class="bg-gray-800 py-6">
-        <div class="container mx-auto flex items-center justify-between px-4">
-            <h1 class="text-3xl font-bold animate-fadeIn">Juan - Ingeniero de Sistemas</h1>
-            <nav>
-                <a href="#skills" class="text-lg hover:text-blue-400">Skills</a>
-                <a href="#projects" class="ml-6 text-lg hover:text-blue-400">Proyectos</a>
-                <a href="#contact" class="ml-6 text-lg hover:text-blue-400">Contacto</a>
-            </nav>
-        </div>
-    </header>
+<body class="bg-gray-900 text-white font-mono">
+    <div class="container mx-auto px-4 py-8">
+        <header class="text-center mb-12">
+            <h1 class="text-5xl font-bold mb-4 text-neon-cyan animate-pulse">Smith de los Cielos</h1>
+            <p class="text-xl text-neon-blue">Ingeniero de Sistemas & Desarrollador</p>
+        </header>
 
-    <!-- Hero Section -->
-    <section class="hero bg-gray-900 h-screen flex items-center justify-center text-center py-20">
-        <div class="container mx-auto px-4">
-            <h2 class="text-4xl md:text-5xl font-bold mb-4 animate-fadeIn">¡Hola! Soy Juan</h2>
-            <p class="text-lg md:text-xl mb-8 animate-fadeIn">Ingeniero de Sistemas Senior con experiencia en desarrollo de software y un enfoque en soluciones innovadoras.</p>
-            <a href="#contact" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-lg transition duration-300 animate-fadeIn">Contáctame</a>
-        </div>
-    </section>
+        <nav class="mb-12">
+            <ul class="flex justify-center space-x-6">
+                <li><a href="#sobre-mi" class="text-neon-cyan hover:text-neon-purple transition-colors">Sobre Mí</a></li>
+                <li><a href="#proyectos" class="text-neon-cyan hover:text-neon-purple transition-colors">Proyectos</a></li>
+                <li><a href="#habilidades" class="text-neon-cyan hover:text-neon-purple transition-colors">Habilidades</a></li>
+                <li><a href="#contacto" class="text-neon-cyan hover:text-neon-purple transition-colors">Contacto</a></li>
+            </ul>
+        </nav>
 
-    <!-- Skills Section -->
-    <section id="skills" class="py-20 bg-gray-800">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold mb-12 text-center animate-fadeIn">Habilidades</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-gray-700 p-6 rounded-lg shadow-lg animate-fadeIn">
-                    <h3 class="text-xl font-semibold mb-4">Desarrollo Web</h3>
-                    <p>Experto en HTML, CSS, JavaScript, y frameworks modernos como React y Angular.</p>
-                </div>
-                <div class="bg-gray-700 p-6 rounded-lg shadow-lg animate-fadeIn">
-                    <h3 class="text-xl font-semibold mb-4">Bases de Datos</h3>
-                    <p>Experiencia en diseño y gestión de bases de datos SQL y NoSQL, como MySQL, PostgreSQL y MongoDB.</p>
-                </div>
-                <div class="bg-gray-700 p-6 rounded-lg shadow-lg animate-fadeIn">
-                    <h3 class="text-xl font-semibold mb-4">DevOps</h3>
-                    <p>Conocimiento en integración continua, despliegue continuo y herramientas como Docker y Kubernetes.</p>
-                </div>
-                <div class="bg-gray-700 p-6 rounded-lg shadow-lg animate-fadeIn">
-                    <h3 class="text-xl font-semibold mb-4">Seguridad</h3>
-                    <p>Implementación de medidas de seguridad para proteger aplicaciones y datos sensibles.</p>
-                </div>
-                <div class="bg-gray-700 p-6 rounded-lg shadow-lg animate-fadeIn">
-                    <h3 class="text-xl font-semibold mb-4">Análisis y Diseño</h3>
-                    <p>Habilidades en análisis de requerimientos, diseño de sistemas y metodologías ágiles.</p>
-                </div>
-                <div class="bg-gray-700 p-6 rounded-lg shadow-lg animate-fadeIn">
-                    <h3 class="text-xl font-semibold mb-4">Gestión de Proyectos</h3>
-                    <p>Experiencia en la gestión de proyectos de software, planificación y coordinación de equipos.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+        <main>
+            <section id="sobre-mi" class="mb-12">
+                <h2 class="text-3xl font-bold mb-4 text-neon-blue">Sobre Mí</h2>
+                <p class="text-gray-300">Soy un apasionado ingeniero de sistemas con experiencia en desarrollo de software y soluciones tecnológicas innovadoras.</p>
+            </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="py-20 bg-gray-900">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold mb-12 text-center animate-fadeIn">Proyectos Destacados</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Project Card -->
-                <div class="bg-gray-800 p-6 rounded-lg shadow-lg animate-fadeIn">
-                    <h3 class="text-xl font-semibold mb-4">Proyecto 1</h3>
-                    <p>Descripción breve del proyecto, incluyendo las tecnologías utilizadas y el impacto logrado.</p>
-                </div>
-                <!-- Project Card -->
-                <div class="bg-gray-800 p-6 rounded-lg shadow-lg animate-fadeIn">
-                    <h3 class="text-xl font-semibold mb-4">Proyecto 2</h3>
-                    <p>Descripción breve del proyecto, incluyendo las tecnologías utilizadas y el impacto logrado.</p>
-                </div>
-                <!-- Project Card -->
-                <div class="bg-gray-800 p-6 rounded-lg shadow-lg animate-fadeIn">
-                    <h3 class="text-xl font-semibold mb-4">Proyecto 3</h3>
-                    <p>Descripción breve del proyecto, incluyendo las tecnologías utilizadas y el impacto logrado.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-gray-800">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold mb-12 text-center animate-fadeIn">Contacto</h2>
-            <div class="flex justify-center">
-                <form class="w-full max-w-lg bg-gray-700 p-8 rounded-lg shadow-lg">
-                    <div class="mb-4">
-                        <label for="name" class="block text-lg font-medium mb-2">Nombre</label>
-                        <input type="text" id="name" class="w-full p-3 bg-gray-600 text-white rounded-lg border border-gray-500 focus:outline-none focus:border-blue-500" required>
+            <section id="proyectos" class="mb-12">
+                <h2 class="text-3xl font-bold mb-4 text-neon-blue">Proyectos</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
+                        <h3 class="text-xl font-bold mb-2 text-neon-cyan">Proyecto 1</h3>
+                        <p class="text-gray-300">Descripción del proyecto 1...</p>
                     </div>
-                    <div class="mb-4">
-                        <label for="email" class="block text-lg font-medium mb-2">Email</label>
-                        <input type="email" id="email" class="w-full p-3 bg-gray-600 text-white rounded-lg border border-gray-500 focus:outline-none focus:border-blue-500" required>
+                    <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
+                        <h3 class="text-xl font-bold mb-2 text-neon-cyan">Proyecto 2</h3>
+                        <p class="text-gray-300">Descripción del proyecto 2...</p>
                     </div>
-                    <div class="mb-4">
-                        <label for="message" class="block text-lg font-medium mb-2">Mensaje</label>
-                        <textarea id="message" rows="4" class="w-full p-3 bg-gray-600 text-white rounded-lg border border-gray-500 focus:outline-none focus:border-blue-500" required></textarea>
-                    </div>
-                    <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-lg transition duration-300">Enviar</button>
-                </form>
-            </div>
-        </div>
-    </section>
+                </div>
+            </section>
 
-    <!-- Footer -->
-    <footer class="bg-gray-800 py-6 text-center">
-        <p class="text-white">© 2024 Juan. Todos los derechos reservados.</p>
-    </footer>
+            <section id="habilidades" class="mb-12">
+                <h2 class="text-3xl font-bold mb-4 text-neon-blue">Habilidades</h2>
+                <ul class="list-disc list-inside text-gray-300">
+                    <li>Python</li>
+                    <li>JavaScript</li>
+                    <li>HTML/CSS</li>
+                    <li>Frameworks web</li>
+                    <li>Bases de datos</li>
+                </ul>
+            </section>
+
+            <section id="contacto">
+                <h2 class="text-3xl font-bold mb-4 text-neon-blue">Contacto</h2>
+                <p class="text-gray-300">¡Contáctame para colaborar en proyectos emocionantes!</p>
+                <a href="mailto:smith@example.com" class="inline-block mt-4 bg-neon-cyan text-gray-900 px-4 py-2 rounded hover:bg-neon-blue transition-colors">Enviar correo</a>
+            </section>
+        </main>
+    </div>
+
+    <div id="typing-animation" class="fixed bottom-0 left-0 w-full h-8 bg-gray-800 overflow-hidden">
+        <div id="code-line" class="whitespace-nowrap text-neon-cyan"></div>
+    </div>
+
+    <script>
+        const codeSamples = [
+            'def hello_world():',
+            '    print("Hello, World!")',
+            'for i in range(10):',
+            '    print(i ** 2)',
+            'import numpy as np',
+            'x = np.array([1, 2, 3])',
+            'y = x * 2',
+            'print(y)'
+        ];
+
+        const codeLine = document.getElementById('code-line');
+        let currentSampleIndex = 0;
+        let currentCharIndex = 0;
+
+        function typeCode() {
+            if (currentCharIndex < codeSamples[currentSampleIndex].length) {
+                codeLine.textContent += codeSamples[currentSampleIndex][currentCharIndex];
+                currentCharIndex++;
+                setTimeout(typeCode, 100);
+            } else {
+                setTimeout(eraseCode, 2000);
+            }
+        }
+
+        function eraseCode() {
+            if (codeLine.textContent.length > 0) {
+                codeLine.textContent = codeLine.textContent.slice(0, -1);
+                setTimeout(eraseCode, 50);
+            } else {
+                currentSampleIndex = (currentSampleIndex + 1) % codeSamples.length;
+                currentCharIndex = 0;
+                setTimeout(typeCode, 500);
+            }
+        }
+
+        typeCode();
+    </script>
 </body>
 </html>
