@@ -1,124 +1,393 @@
 <!DOCTYPE html>
-<html lang="es" class="dark">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Smith de los Cielos - Portafolio</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    colors: {
-                        neon: {
-                            cyan: '#00FFFF',
-                            blue: '#00BFFF',
-                            purple: '#8A2BE2'
-                        }
-                    }
-                }
+    <title>Portafolio de Desarrollador Full Stack Ultra Senior</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #00ffff;
+            --secondary-color: #ff00ff;
+            --background-color: #0a0a1a;
+            --text-color: #ffffff;
+            --accent-color: #ffff00;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: rgba(10, 10, 26, 0.8);
+            backdrop-filter: blur(10px);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style-type: none;
+        }
+
+        nav ul li {
+            margin-left: 2rem;
+        }
+
+        nav ul li a {
+            color: var(--text-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+
+        nav ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(45deg, var(--background-color), #1a1a3a);
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px var(--primary-color), 0 0 20px var(--primary-color);
+            }
+            to {
+                text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px var(--primary-color), 0 0 40px var(--primary-color);
             }
         }
-    </script>
-</head>
-<body class="bg-gray-900 text-white font-mono">
-    <div class="container mx-auto px-4 py-8">
-        <header class="text-center mb-12">
-            <h1 class="text-5xl font-bold mb-4 text-neon-cyan animate-pulse">Smith de los Cielos</h1>
-            <p class="text-xl text-neon-blue">Ingeniero de Sistemas & Desarrollador</p>
-        </header>
 
-        <nav class="mb-12">
-            <ul class="flex justify-center space-x-6">
-                <li><a href="#sobre-mi" class="text-neon-cyan hover:text-neon-purple transition-colors">Sobre Mí</a></li>
-                <li><a href="#proyectos" class="text-neon-cyan hover:text-neon-purple transition-colors">Proyectos</a></li>
-                <li><a href="#habilidades" class="text-neon-cyan hover:text-neon-purple transition-colors">Habilidades</a></li>
-                <li><a href="#contacto" class="text-neon-cyan hover:text-neon-purple transition-colors">Contacto</a></li>
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            font-weight: 300;
+        }
+
+        .typed-text::after {
+            content: '|';
+            animation: blink 0.7s infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            background-color: var(--primary-color);
+            color: var(--background-color);
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn:hover {
+            background-color: var(--secondary-color);
+            box-shadow: 0 0 20px var(--secondary-color);
+            transform: translateY(-3px);
+        }
+
+        .particle {
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            background-color: var(--accent-color);
+            border-radius: 50%;
+            animation: float 15s infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0); }
+            25% { transform: translate(100px, 100px); }
+            50% { transform: translate(-100px, 200px); }
+            75% { transform: translate(200px, -100px); }
+        }
+
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .project-card {
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(from 0deg, transparent, var(--primary-color), transparent 30%);
+            animation: rotate 4s linear infinite;
+        }
+
+        .project-card::after {
+            content: '';
+            position: absolute;
+            inset: 3px;
+            background: var(--background-color);
+            border-radius: 15px;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 255, 255, 0.2);
+        }
+
+        .project-card h3 {
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .project-card p {
+            position: relative;
+            z-index: 1;
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .skills {
+            margin-top: 4rem;
+            text-align: center;
+        }
+
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .skill-item {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--text-color);
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .skill-item:hover {
+            background-color: var(--primary-color);
+            color: var(--background-color);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 255, 255, 0.3);
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 4rem;
+            padding: 2rem 0;
+            background-color: rgba(255, 255, 255, 0.05);
+            position: relative;
+            overflow: hidden;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(from 0deg, transparent, var(--secondary-color), transparent 30%);
+            animation: rotate 6s linear infinite;
+        }
+
+        footer p {
+            position: relative;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">DevMaster</div>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#proyectos">Proyectos</a></li>
+                <li><a href="#habilidades">Habilidades</a></li>
+                <li><a href="#contacto">Contacto</a></li>
             </ul>
         </nav>
+    </header>
 
-        <main>
-            <section id="sobre-mi" class="mb-12">
-                <h2 class="text-3xl font-bold mb-4 text-neon-blue">Sobre Mí</h2>
-                <p class="text-gray-300">Soy un apasionado ingeniero de sistemas con experiencia en desarrollo de software y soluciones tecnológicas innovadoras.</p>
-            </section>
+    <section id="inicio" class="hero">
+        <h1>Full Stack Ultra Senior</h1>
+        <p>Especializado en <span class="typed-text"></span></p>
+        <a href="#contacto" class="btn">Inicia un Proyecto</a>
+    </section>
 
-            <section id="proyectos" class="mb-12">
-                <h2 class="text-3xl font-bold mb-4 text-neon-blue">Proyectos</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
-                        <h3 class="text-xl font-bold mb-2 text-neon-cyan">Proyecto 1</h3>
-                        <p class="text-gray-300">Descripción del proyecto 1...</p>
-                    </div>
-                    <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
-                        <h3 class="text-xl font-bold mb-2 text-neon-cyan">Proyecto 2</h3>
-                        <p class="text-gray-300">Descripción del proyecto 2...</p>
-                    </div>
-                </div>
-            </section>
+    <div class="container">
+        <section id="proyectos" class="projects">
+            <div class="project-card">
+                <h3>Proyecto Innovador 1</h3>
+                <p>Solución de vanguardia para problemas complejos de la industria.</p>
+            </div>
+            <div class="project-card">
+                <h3>Proyecto Disruptivo 2</h3>
+                <p>Transformando la manera en que interactuamos con la tecnología.</p>
+            </div>
+            <div class="project-card">
+                <h3>Proyecto Revolucionario 3</h3>
+                <p>Impulsando el futuro de la inteligencia artificial y el aprendizaje automático.</p>
+            </div>
+        </section>
 
-            <section id="habilidades" class="mb-12">
-                <h2 class="text-3xl font-bold mb-4 text-neon-blue">Habilidades</h2>
-                <ul class="list-disc list-inside text-gray-300">
-                    <li>Python</li>
-                    <li>JavaScript</li>
-                    <li>HTML/CSS</li>
-                    <li>Frameworks web</li>
-                    <li>Bases de datos</li>
-                </ul>
-            </section>
-
-            <section id="contacto">
-                <h2 class="text-3xl font-bold mb-4 text-neon-blue">Contacto</h2>
-                <p class="text-gray-300">¡Contáctame para colaborar en proyectos emocionantes!</p>
-                <a href="mailto:smith@example.com" class="inline-block mt-4 bg-neon-cyan text-gray-900 px-4 py-2 rounded hover:bg-neon-blue transition-colors">Enviar correo</a>
-            </section>
-        </main>
+        <section id="habilidades" class="skills">
+            <h2>Experticia Técnica</h2>
+            <div class="skill-list">
+                <span class="skill-item">Arquitectura de Sistemas</span>
+                <span class="skill-item">Desarrollo Full Stack</span>
+                <span class="skill-item">DevOps & CI/CD</span>
+                <span class="skill-item">Cloud Computing</span>
+                <span class="skill-item">Inteligencia Artificial</span>
+                <span class="skill-item">Blockchain</span>
+                <span class="skill-item">IoT</span>
+                <span class="skill-item">Ciberseguridad</span>
+            </div>
+        </section>
     </div>
 
-    <div id="typing-animation" class="fixed bottom-0 left-0 w-full h-8 bg-gray-800 overflow-hidden">
-        <div id="code-line" class="whitespace-nowrap text-neon-cyan"></div>
-    </div>
+    <footer id="contacto">
+        <p>© 2024 DevMaster. Transformando ideas en realidad.</p>
+        <p>contacto@devmaster.com | +1 (555) 123-4567</p>
+    </footer>
 
     <script>
-        const codeSamples = [
-            'def hello_world():',
-            '    print("Hello, World!")',
-            'for i in range(10):',
-            '    print(i ** 2)',
-            'import numpy as np',
-            'x = np.array([1, 2, 3])',
-            'y = x * 2',
-            'print(y)'
-        ];
+        // Animación de autoescritura
+        const typedTextSpan = document.querySelector(".typed-text");
+        const cursorSpan = document.querySelector(".cursor");
 
-        const codeLine = document.getElementById('code-line');
-        let currentSampleIndex = 0;
-        let currentCharIndex = 0;
+        const textArray = ["Arquitectura de Sistemas", "Desarrollo Full Stack", "DevOps", "Inteligencia Artificial"];
+        const typingDelay = 200;
+        const erasingDelay = 100;
+        const newTextDelay = 2000;
+        let textArrayIndex = 0;
+        let charIndex = 0;
 
-        function typeCode() {
-            if (currentCharIndex < codeSamples[currentSampleIndex].length) {
-                codeLine.textContent += codeSamples[currentSampleIndex][currentCharIndex];
-                currentCharIndex++;
-                setTimeout(typeCode, 100);
+        function type() {
+            if (charIndex < textArray[textArrayIndex].length) {
+                typedTextSpan.textContent += textArray[textArrayIndex].charAt(charIndex);
+                charIndex++;
+                setTimeout(type, typingDelay);
             } else {
-                setTimeout(eraseCode, 2000);
+                setTimeout(erase, newTextDelay);
             }
         }
 
-        function eraseCode() {
-            if (codeLine.textContent.length > 0) {
-                codeLine.textContent = codeLine.textContent.slice(0, -1);
-                setTimeout(eraseCode, 50);
+        function erase() {
+            if (charIndex > 0) {
+                typedTextSpan.textContent = textArray[textArrayIndex].substring(0, charIndex - 1);
+                charIndex--;
+                setTimeout(erase, erasingDelay);
             } else {
-                currentSampleIndex = (currentSampleIndex + 1) % codeSamples.length;
-                currentCharIndex = 0;
-                setTimeout(typeCode, 500);
+                textArrayIndex++;
+                if (textArrayIndex >= textArray.length) textArrayIndex = 0;
+                setTimeout(type, typingDelay + 1100);
             }
         }
 
-        typeCode();
+        document.addEventListener("DOMContentLoaded", function() {
+            setTimeout(type, newTextDelay + 250);
+        });
+
+        // Partículas flotantes
+        function createParticle() {
+            const particle = document.createElement('div');
+            particle.classList.add('particle');
+            particle.style.left = Math.random() * 100 + 'vw';
+            particle.style.top = Math.random() * 100 + 'vh';
+            particle.style.animationDuration = (Math.random() * 15 + 5) + 's';
+            document.body.appendChild(particle);
+            
+            setTimeout(() => {
+                particle.remove();
+            }, 20000);
+        }
+
+        setInterval(createParticle, 500);
+
+        // Navegación suave
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
     </script>
 </body>
 </html>
